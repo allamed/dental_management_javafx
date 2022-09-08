@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane prefHeight="668.0" prefWidth="1429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.imageController">
+   <content>
+      <AnchorPane prefHeight="664.0" prefWidth="1429.0" style="-fx-background-color: #ffffff;" stylesheets="@style.css">
+         <children>
+            <ImageView fx:id="img" fitHeight="658.0" fitWidth="972.0" onMouseClicked="#interact" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../ressources/dental-xray-2-825x550.jpg" />
+               </image></ImageView>
+            <Text fx:id="DentObjetRemarque" fill="#f50000" layoutX="256.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" visible="false">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Text>
+            <TableView fx:id="tableRemarques" layoutX="1003.0" layoutY="69.0" onMouseClicked="#localiserRemarque" prefHeight="229.0" prefWidth="386.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="55.0" text="Numéro" />
+                <TableColumn fx:id="colRemarque" prefWidth="254.0" text="Remarque" />
+                  <TableColumn fx:id="colType" prefWidth="76.0" text="type" />
+              </columns>
+            </TableView>
+            <Label layoutX="1110.0" layoutY="15.0" text="Liste des remarques " textFill="#1b2b86">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1006.0" layoutY="374.0" prefHeight="268.0" prefWidth="381.0" style="-fx-border-color: #8AAABD; -fx-border-radius: 10;">
+               <children>
+                  <ComboBox fx:id="cbTypeRemarque" layoutX="182.0" layoutY="19.0" prefWidth="150.0" promptText="Type de remarque" style="-fx-background-color: #E5F1F8;" />
+                  <TextArea fx:id="taRemarque" layoutX="21.0" layoutY="120.0" prefHeight="85.0" prefWidth="335.0" />
+                  <TextField fx:id="tfX" layoutX="198.0" layoutY="59.0" prefHeight="25.0" prefWidth="47.0" promptText="X" />
+                  <TextField fx:id="tfY" layoutX="264.0" layoutY="58.0" prefHeight="25.0" prefWidth="47.0" promptText="Y" />
+                  <Label layoutX="25.0" layoutY="23.0" text="Type de remarque" textFill="#272728" />
+                  <Label layoutX="41.0" layoutY="59.0" text="Coordonnées" textFill="#272728">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="97.0" text="Contenu de la remarque" textFill="#272728">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAjouterRemarque" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="120.0" layoutY="219.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #ffffff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Ajouter une remarque">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </Pane>
+            <Button fx:id="btnSupprimerRemarque" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="1099.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Supprimer une remarque">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Button>
+            <Label layoutX="1034.0" layoutY="44.0" text="Appuyer sur une remarque pour localiser le dent concerné" textFill="#272728" />
+            <Label fx:id="labelRemarque" alignment="CENTER" contentDisplay="CENTER" layoutX="223.0" layoutY="488.0" prefHeight="61.0" prefWidth="186.0" style="-fx-background-color: #FDFDF0; -fx-background-radius: 10;" text="Label" wrapText="true" />
+            <Button fx:id="btnEffacer" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="889.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="74.0" text="Effacer">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Button>
+            <Label fx:id="labelIdRadio" layoutX="30.0" layoutY="15.0" text="Label" textFill="#eaff28" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

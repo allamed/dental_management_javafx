@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ActeMedicalController">
+   <content>
+      <AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="979.0" prefWidth="1589.0" style="-fx-background-color: #FFFFFF;" stylesheets="@style.css">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="-3.0" layoutY="-1.0" prefHeight="928.0" prefWidth="346.0" style="-fx-background-color: #EBE8F9;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox layoutX="10.0" layoutY="184.0" prefHeight="73.0" prefWidth="346.0" />
+                  <ImageView fitHeight="162.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../ressources/1200px-Male_Doctor_Flat_Icon_Vector.svg.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="114.0" prefWidth="346.0" />
+                  <Button fx:id="btnAccueil" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="10.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="361.0" style="-fx-background-color: #EBE8F9;" text="Accueil">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/icons8_Home_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="65.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnPatients" alignment="BASELINE_LEFT" graphicTextGap="40.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="361.0" style="-fx-background-color: #EBE8F9;" text="Patients">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/Picture12.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="65.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnActesMedic" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="10.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="361.0" style="-fx-background-color: #EBE8F9;" text="Actes médicaux">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/icons8_Xbox_Menu_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="68.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnUser" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="10.0" layoutY="504.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="361.0" style="-fx-background-color: #EBE8F9;" text=" Utilisateurs">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/icons8_Person_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="68.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnConfig" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="10.0" layoutY="476.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="361.0" style="-fx-background-color: #EBE8F9;" text="Configurations">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/Picturep22.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="68.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnClose" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="10.0" layoutY="448.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="361.0" style="-fx-background-color: #EBE8F9;" text="Se déconnecter">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="67.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+            <TextField fx:id="tfNouv" layoutX="140.0" layoutY="255.0" prefHeight="25.0" prefWidth="189.0" promptText="taper la nouvelle catégorie" visible="false" />
+            <StackPane layoutX="363.0" layoutY="335.0" prefHeight="517.0" prefWidth="400.0" style="-fx-border-radius: 20;">
+               <children>
+                  <Pane fx:id="pnAjouter" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #C4E8FB; -fx-border-radius: 25;" visible="false">
+                     <children>
+                        <Label layoutX="109.0" layoutY="18.0" prefHeight="31.0" prefWidth="230.0" text="Ajouter un acte médical" textFill="#3f0b8f">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="53.0" fitWidth="49.0" layoutX="30.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/Picture4.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnConfirmAdd" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="101.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #fff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Confirmer">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Button>
+                        <Label layoutX="47.0" layoutY="96.0" prefHeight="31.0" prefWidth="317.0" text="Sélectionner un patient du tableau ci-contre" textFill="#403e43">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dpdebut" layoutX="80.0" layoutY="191.0" prefHeight="39.0" prefWidth="240.0" promptText="Date de début" />
+                        <Label layoutX="61.0" layoutY="244.0" prefHeight="31.0" prefWidth="154.0" text="Numéro du patient " textFill="#403e43">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelPatient" layoutX="204.0" layoutY="245.0" prefHeight="31.0" prefWidth="154.0" text="Num" textFill="#1a0a90">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnModifier" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #C4E8FB; -fx-border-radius: 25;" visible="false">
+                     <children>
+                        <VBox layoutX="75.0" layoutY="107.0" prefHeight="236.0" prefWidth="234.0">
+                           <children>
+                              <TextField fx:id="tfId2" prefHeight="40.0" prefWidth="228.0" promptText="Numéro ID" />
+                              <TextField fx:id="tfNom2" prefHeight="40.0" prefWidth="189.0" promptText="Nom" />
+                              <TextField fx:id="tfPrenom2" prefHeight="40.0" prefWidth="189.0" promptText="Prénom" />
+                              <DatePicker fx:id="dpNaissance2" prefHeight="39.0" prefWidth="240.0" promptText="Date de naissance" />
+                              <TextField fx:id="tfCin2" prefHeight="40.0" prefWidth="189.0" promptText="Numéro CIN" />
+                              <ComboBox fx:id="cbSex2" prefHeight="40.0" prefWidth="240.0" promptText="Sexe" style="-fx-background-color: #F4F9FB; -fx-border-color: #DADEDE;" />
+                           </children>
+                        </VBox>
+                        <Label layoutX="109.0" layoutY="18.0" prefHeight="31.0" prefWidth="205.0" text="Modifier les informations" textFill="#3f0b8f">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="53.0" fitWidth="49.0" layoutX="30.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/edit2.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnConfirmEdit" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="101.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #fff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Confirmer">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/edit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnChart" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnAjouter" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="20.0" layoutY="75.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="365.0" style="-fx-background-color: #fff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Ajouter un nouvel acte médical">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnClore" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="15.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="366.0" style="-fx-background-color: #fff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Clore un acte médical">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/icons8_Box_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnActe" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="15.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="365.0" style="-fx-background-color: #fff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Gérer les interventions et les radios">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/icons8_Slider__32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+            <HBox alignment="CENTER" layoutX="364.0" prefHeight="137.0" prefWidth="1225.0" AnchorPane.leftAnchor="345.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="137.0" prefWidth="275.0">
+                     <children>
+                        <Label fx:id="labelTotal" alignment="CENTER" contentDisplay="CENTER" prefHeight="73.0" prefWidth="138.0" text="255" textFill="#2a73ff">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="205.0" text="TOTAL SOINS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="137.0" prefWidth="275.0">
+                     <children>
+                        <Label fx:id="labelSoinsPasses" alignment="CENTER" contentDisplay="CENTER" prefHeight="72.0" prefWidth="131.0" text="255" textFill="#26bfbc">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="224.0" text="SOINS PASSES">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="432.0" layoutY="10.0" prefHeight="137.0" prefWidth="275.0">
+                     <children>
+                        <Label fx:id="labelSoinsEnCours" alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="131.0" text="255" textFill="#26bfbc">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="175.0" text="SOINS EN COURS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="753.0" layoutY="10.0" prefHeight="137.0" prefWidth="275.0">
+                     <children>
+                        <Label fx:id="labelTauxSoinsPasses" alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="131.0" text="255" textFill="#fa5f7e">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="175.0" text="TAUX SOINS PASSES">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="340.0" layoutY="10.0" prefHeight="137.0" prefWidth="275.0">
+                     <children>
+                        <Label fx:id="labelTauxSoinsEnCours" alignment="CENTER" contentDisplay="CENTER" prefHeight="72.0" prefWidth="131.0" text="255" textFill="#fa5f7e">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="215.0" text="TAUX SOINS EN COURS">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="btnManage" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="40.0" layoutX="449.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="103.0" prefWidth="169.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="5.0" />
+               </font>
+               <padding>
+                  <Insets left="67.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="106.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../ressources/339-3392184_home-icons-blue-home-icon-blue-png.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <StackPane layoutX="774.0" layoutY="147.0" prefHeight="696.0" prefWidth="792.0">
+               <children>
+                  <Pane fx:id="PnTableActe" prefHeight="689.0" prefWidth="876.0" visible="false">
+                     <children>
+                        <ScrollPane layoutX="-4.0" layoutY="48.0" prefHeight="665.0" prefWidth="789.0" style="-fx-background-color: #FFFFFF;">
+                           <content>
+                              <TableView fx:id="tableActes" prefHeight="656.0" prefWidth="786.0">
+                                <columns>
+                                  <TableColumn fx:id="coliDacte" prefWidth="105.0" style="-fx-alignment: CENTER;" text="ID" />
+                                  <TableColumn fx:id="colDebut" prefWidth="139.0" style="-fx-alignment: CENTER;" text="Date de début" />
+                                    <TableColumn fx:id="colPrix" prefWidth="155.6666259765625" style="-fx-alignment: CENTER;" text="Prix comptabilisé" />
+                                    <TableColumn fx:id="colEtat" prefWidth="132.3333740234375" style="-fx-alignment: CENTER;" text="Etat de l'acte" />
+                                    <TableColumn fx:id="colFin" prefWidth="133.6666259765625" style="-fx-alignment: CENTER;" text="Date de fin" />
+                                    <TableColumn fx:id="colPatientActe" prefWidth="118.333251953125" style="-fx-alignment: CENTER;" text="Patient concerné " />
+                                </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <TextField fx:id="tfRechercheActe" layoutX="58.0" layoutY="-4.0" prefHeight="42.0" prefWidth="291.0" promptText="Taper un ID_Acte ou un numéro de patient" style="-fx-background-radius: 15;" />
+                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="10.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/icons8_Search_52px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="PnTablePatient" layoutX="10.0" layoutY="10.0" prefHeight="689.0" prefWidth="876.0">
+                     <children>
+                        <ScrollPane layoutX="-4.0" layoutY="48.0" prefHeight="665.0" prefWidth="789.0" style="-fx-background-color: #FFFFFF;">
+                           <content>
+                              <TableView fx:id="tablePatients" onMouseClicked="#showRowDataPatient" prefHeight="656.0" prefWidth="786.0">
+                                 <columns>
+                                    <TableColumn fx:id="coliD" prefWidth="105.0" style="-fx-alignment: CENTER;" text="ID" />
+                                    <TableColumn fx:id="colNom" prefWidth="139.0" style="-fx-alignment: CENTER;" text="Nom" />
+                                    <TableColumn fx:id="colPrenom" prefWidth="155.6666259765625" style="-fx-alignment: CENTER;" text="Prénom" />
+                                    <TableColumn fx:id="colNaissance" prefWidth="132.3333740234375" style="-fx-alignment: CENTER;" text="Date de naissance" />
+                                    <TableColumn fx:id="colCin" prefWidth="133.6666259765625" style="-fx-alignment: CENTER;" text="Cin" />
+                                    <TableColumn fx:id="colSex" prefWidth="118.333251953125" style="-fx-alignment: CENTER;" text="sexe" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <TextField fx:id="tfRecherchePatient" layoutX="58.0" layoutY="-4.0" prefHeight="42.0" prefWidth="291.0" promptText="Taper un ID, nom, prénom ou cin" style="-fx-background-radius: 15;" />
+                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="10.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressources/icons8_Search_52px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+            <Pane fx:id="pnDetailActe" layoutX="338.0" layoutY="1.0" prefHeight="978.0" prefWidth="1251.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="344.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="12.0" layoutY="41.0" prefHeight="156.0" prefWidth="1224.0" spacing="50.0" style="-fx-border-color: #0A3AC4; -fx-border-radius: 15;">
+                     <children>
+                        <HBox prefHeight="128.0" prefWidth="399.0">
+                           <children>
+                              <ImageView fitHeight="109.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/392934.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="109.0" prefWidth="173.0">
+                                 <children>
+                                    <Label text="Acte médical numéro">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Date début soin">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Etat de l'acte">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Date fin soin">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="128.0" prefWidth="122.0">
+                                 <children>
+                                    <Label fx:id="idActe" prefHeight="26.0" prefWidth="123.0" text="-" textFill="#0a38ae">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dateDebutSoin" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="123.0" text="-" textFill="#0a38ae">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="etatActe" layoutX="10.0" layoutY="36.0" prefHeight="26.0" prefWidth="128.0" text="-" textFill="#0a38ae">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dateFinSoin" layoutX="10.0" layoutY="62.0" prefHeight="26.0" prefWidth="120.0" text="-" textFill="#0a38ae">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="434.0" layoutY="10.0" prefHeight="128.0" prefWidth="399.0">
+                           <children>
+                              <ImageView fitHeight="109.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/Picture4.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="109.0" prefWidth="122.0">
+                                 <children>
+                                    <Label text="ID du patient">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Nom">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Prénom">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Sexe">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="128.0" prefWidth="122.0">
+                                 <children>
+                                    <Label fx:id="idPatient" prefHeight="26.0" prefWidth="123.0" text="-" textFill="#0f40bc">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nomPatient" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="123.0" text="-" textFill="#0f40bc">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="prenomPatient" layoutX="10.0" layoutY="36.0" prefHeight="26.0" prefWidth="128.0" text="-" textFill="#0f40bc">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="sexe" layoutX="10.0" layoutY="62.0" prefHeight="26.0" prefWidth="120.0" text="-" textFill="#0f40bc">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="633.0" layoutY="10.0" prefHeight="104.0" prefWidth="238.0">
+                           <children>
+                              <ImageView fitHeight="95.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../ressources/438526.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="104.0" prefWidth="131.0" spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="36.0" prefWidth="79.0" spacing="10.0">
+                                       <children>
+                                          <Label fx:id="prixComptabilise" text="00" textFill="#289412">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" lineSpacing="10.0" text="DH" textFill="#289412">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="10.0" layoutY="10.0" text="Prix comptabilisé " />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="25.0" top="25.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutY="203.0" prefHeight="21.0" prefWidth="1252.0" style="-fx-background-color: #ECEFF0;">
+                     <children>
+                        <Label text="Interventions" textFill="#4077d7">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="1.0" layoutY="529.0" prefHeight="42.0" prefWidth="1252.0" style="-fx-background-color: #ECEFF0;">
+                     <children>
+                        <Label text="Radios" textFill="#4077d7">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="-1.0" prefHeight="30.0" prefWidth="1252.0" style="-fx-background-color: #ECEFF0;">
+                     <children>
+                        <Label text="Informations de l'acte médical" textFill="#4077d7">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableRadios" layoutX="13.0" layoutY="610.0" onMouseClicked="#showRowDataRadio" prefHeight="258.0" prefWidth="451.0">
+                     <columns>
+                        <TableColumn fx:id="coliDRadio" prefWidth="85.0" style="-fx-alignment: CENTER;" text="ID radio" />
+                        <TableColumn fx:id="colDateRadio" prefWidth="89.0" style="-fx-alignment: CENTER;" text="Date " />
+                        <TableColumn fx:id="colTypeRadio" prefWidth="101.0" style="-fx-alignment: CENTER;" text="type" />
+                        <TableColumn fx:id="colChemin" prefWidth="173.0" style="-fx-alignment: CENTER;" text="Chemin image" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="btnSupprimerRadio" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="148.0" layoutY="894.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #ffffff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Supprimer une radio">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Button>
+                  <Pane fx:id="pnAddRadio" layoutX="504.0" layoutY="602.0" prefHeight="299.0" prefWidth="283.0">
+                     <children>
+                        <VBox layoutX="27.0" layoutY="71.0" prefHeight="144.0" prefWidth="219.0">
+                           <children>
+                              <ComboBox fx:id="cbTypeRadio" prefHeight="37.0" prefWidth="222.0" promptText="Type radio" />
+                              <DatePicker fx:id="dpDateRadio" prefHeight="40.0" prefWidth="218.0" promptText="Date Radio" />
+                              <HBox prefHeight="40.0" prefWidth="219.0">
+                                 <children>
+                                    <TextField fx:id="labelChemin" prefHeight="39.0" prefWidth="148.0" promptText="Chemin image" />
+                                    <Button fx:id="btnConfirmerIntervention1" alignment="BASELINE_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleFileChooser" prefHeight="39.0" prefWidth="70.0" text="Parcourir" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnConfirmAddRadio" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="87.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #ffffff; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Confirmer">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Button>
+                        <Label layoutX="64.0" layoutY="19.0" text="Ajouter une radio" textFill="#0e860c">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnImageRadio" layoutX="832.0" layoutY="613.0" prefHeight="282.0" prefWidth="356.0">
+                     <children>
+                        <ImageView fx:id="imageRadio" fitHeight="248.0" fitWidth="357.0" layoutX="2.0" onMouseClicked="#showImage" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="labelIDradio" layoutX="92.0" layoutY="269.0" prefHeight="17.0" prefWidth="61.0" />
+                        <Label layoutX="66.0" layoutY="252.0" prefHeight="17.0" prefWidth="223.0" text="cliquer sur l'image pour plus d'options" />
+                     </children>
+                  </Pane>
+                  <HBox alignment="CENTER" layoutX="12.0" layoutY="245.0" prefHeight="273.0" prefWidth="1225.0" spacing="50.0" style="-fx-border-color: #0A3AC4; -fx-border-radius: 15;">
+                     <children>
+                        <ScrollPane prefHeight="234.0" prefWidth="517.0">
+                           <content>
+                              <TableView fx:id="tableInterventions" onMouseClicked="#showRowDataIntervention" prefHeight="224.0" prefWidth="511.0">
+                                 <columns>
+                                    <TableColumn fx:id="coliDIntervention" prefWidth="92.66665649414062" style="-fx-alignment: CENTER;" text="ID intervention" />
+                                    <TableColumn fx:id="colDatePrevue" prefWidth="107.33334350585938" style="-fx-alignment: CENTER;" text="Date prévue" />
+                                    <TableColumn fx:id="colDateReelle" prefWidth="83.0" style="-fx-alignment: CENTER;" text="Date réelle" />
+                                    <TableColumn fx:id="colCategorieIntervention" prefWidth="135.0" style="-fx-alignment: CENTER;" text="Catégorie intervention" />
+                                    <TableColumn fx:id="colEtatRV" prefWidth="82.0" style="-fx-alignment: CENTER;" text="Etat RV" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <Pane fx:id="pnConfirmerIntervention" prefHeight="228.0" prefWidth="292.0" style="-fx-background-color: #D6FDF3;">
+                           <children>
+                              <DatePicker fx:id="dpConfirmer" layoutX="47.0" layoutY="82.0" prefHeight="37.0" prefWidth="200.0" promptText="Date réelle de l'intervention" />
+                              <Label layoutX="38.0" layoutY="26.0" prefHeight="55.0" prefWidth="219.0" text="Sélectionner de la table l'intervention à confirmer" textAlignment="CENTER" textFill="#5a5e5a" wrapText="true">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnConfirmerIntervention" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="88.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: #D6FDF3; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Confirmer">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Button>
+                              <Label layoutX="50.0" layoutY="6.0" prefHeight="25.0" prefWidth="228.0" text="Confirmer une intervention" textFill="#1a5112">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="63.0" layoutY="136.0" text="ID intervention">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelIDConfirmer" layoutX="164.0" layoutY="132.0" prefHeight="28.0" prefWidth="67.0" text="ID">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pnConfirmerIntervention1" prefHeight="228.0" prefWidth="292.0" style="-fx-background-color: #FCD4E3;">
+                           <children>
+                              <Label layoutX="38.0" layoutY="39.0" prefHeight="55.0" prefWidth="219.0" text="Sélectionner de la table l'intervention à confirmer" textAlignment="CENTER" textFill="#5a5e5a" wrapText="true">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnSupprimerIntervention" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="88.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: #FCD4E3; -fx-border-color: #0A3AC4; -fx-border-radius: 20;" text="Supprimer">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Button>
+                              <Label layoutX="50.0" layoutY="6.0" prefHeight="25.0" prefWidth="228.0" text="Supprimer une intervention" textFill="#1a5112">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="63.0" layoutY="120.0" text="ID intervention">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelIDSupprimer" layoutX="164.0" layoutY="117.0" prefHeight="28.0" prefWidth="67.0" text="ID">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="10.0" right="10.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <Label layoutX="80.0" layoutY="577.0" prefHeight="17.0" prefWidth="304.0" text="selectionner une radio du tableau pour plus d'options" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

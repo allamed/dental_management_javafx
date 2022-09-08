@@ -1,0 +1,5 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.data0.chart-pie { -fx-pie-color: #2789C8; }
+.data1.chart-pie { -fx-pie-color: #39DCAD; }
+.default-color0.chart-series-line { -fx-stroke: #146492; }
+

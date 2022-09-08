@@ -1,0 +1,279 @@
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `patient` (\000d\000a  `id` int NOT NULL,\000d\000a  `naissance` date DEFAULT NULL,\000d\000a  `cin` varchar(45) DEFAULT NULL,\000d\000a  `nom` varchar(45) DEFAULT NULL,\000d\000a  `prenom` varchar(45) DEFAULT NULL,\000d\000a  `sexe` varchar(45) DEFAULT NULL,\000d\000a  `date_inscription` date DEFAULT (curdate()),\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `patient` (\000d\000a  `id` int NOT NULL,\000d\000a  `naissance` date DEFAULT NULL,\000d\000a  `cin` varchar(45) DEFAULT NULL,\000d\000a  `nom` varchar(45) DEFAULT NULL,\000d\000a  `prenom` varchar(45) DEFAULT NULL,\000d\000a  `sexe` varchar(45) DEFAULT NULL,\000d\000a  `date_inscription` date DEFAULT (curdate()),\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `patient` (
+  `id` int NOT NULL,
+  `naissance` date DEFAULT NULL,
+  `cin` varchar(45) DEFAULT NULL,
+  `nom` varchar(45) DEFAULT NULL,
+  `prenom` varchar(45) DEFAULT NULL,
+  `sexe` varchar(45) DEFAULT NULL,
+  `date_inscription` date DEFAULT (curdate()),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PATIENT" not found (this database is empty); SQL statement:
+INSERT INTO `patient` VALUES (1,'2022-04-06','hv552','fettah','imadeddine','Masculin','2022-04-01'),(4,'2022-04-20','qh52663','aouad','oussama','Masculin','2022-04-02'),(5,'2022-04-14','gh5225','allam','mohamed','Masculin','2022-04-02'),(6,'2022-04-06','gf5566','diouhri ','aya','FÃ©minin','2022-04-05'),(8,'2022-04-27','5522hg','yassmina','aarabe','FÃ©minin','2022-04-05'),(9,'2022-04-27','5522hg','ihssan','dahbi','FÃ©minin','2022-04-07'),(10,'2022-04-27','5522hg','youssra','slimani','FÃ©minin','2022-04-07'),(11,'2022-04-10','gh558','elhasbi','ayat','FÃ©minin','2022-04-10'),(12,'2022-04-07','fg5554','tlemsani','anas','Masculin','2022-04-10'),(14,'2022-04-06','gf213','lamin','younesse','Masculin','2022-04-13'),(15,'2022-04-04','fg2169','wahabi','samira','FÃ©minin','2022-04-13'),(16,'2022-04-04','fg2169','lambarki','ikram','FÃ©minin','2022-04-13'),(17,'2022-04-04','fg55895','loukili','mehdi','Masculin','2022-04-13'),(18,'2001-04-13','ff5566','najib','mahfoud','Masculin','2022-04-13'),(19,'2001-04-13','ff5566','malki','samira','FÃ©minin','2022-04-13'),(20,'2003-04-17','gh5544','malainine','limame','Masculin','2022-04-15'),(21,'2022-04-21','fg5566','echarfaouy','mohamed','Masculin','2022-04-23'),(22,'2001-04-12','zg12554','ngadi','abdelilah','Masculin','2022-04-30')
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `acte_medical` (\000d\000a  `id` int NOT NULL,\000d\000a  `debut_soin` date DEFAULT NULL,\000d\000a  `prix_comptabilise` float DEFAULT NULL,\000d\000a  `etat_acte` varchar(45) DEFAULT NULL,\000d\000a  `fin_soin` date DEFAULT NULL,\000d\000a  `id_patient` int DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  [*]KEY `fk1_idx` (`id_patient`),\000d\000a  CONSTRAINT `fk1` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `acte_medical` (\000d\000a  `id` int NOT NULL,\000d\000a  `debut_soin` date DEFAULT NULL,\000d\000a  `prix_comptabilise` float DEFAULT NULL,\000d\000a  `etat_acte` varchar(45) DEFAULT NULL,\000d\000a  `fin_soin` date DEFAULT NULL,\000d\000a  `id_patient` int DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  [*]KEY `fk1_idx` (`id_patient`),\000d\000a  CONSTRAINT `fk1` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `acte_medical` (
+  `id` int NOT NULL,
+  `debut_soin` date DEFAULT NULL,
+  `prix_comptabilise` float DEFAULT NULL,
+  `etat_acte` varchar(45) DEFAULT NULL,
+  `fin_soin` date DEFAULT NULL,
+  `id_patient` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk1_idx` (`id_patient`),
+  CONSTRAINT `fk1` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ACTE_MEDICAL" not found (this database is empty); SQL statement:
+INSERT INTO `acte_medical` VALUES (1,'2022-04-14',0,'en cours',NULL,5),(2,'2022-04-13',0,'terminÃ©','2022-04-04',9),(3,'2022-04-20',0,'terminÃ©','2022-04-06',6),(4,'2022-04-21',0,'terminÃ©','2022-04-04',10),(5,'2022-04-15',1520,'en cours',NULL,5),(6,'2022-04-14',0,'en cours',NULL,6),(7,'2022-04-14',0,'terminÃ©','2022-04-08',NULL),(8,'2022-04-13',300,'en cours',NULL,5),(9,'2022-04-21',0,'en cours',NULL,9),(10,'2022-04-05',0,'en cours',NULL,4),(11,'2022-04-22',0,'en cours',NULL,17),(12,'2022-04-22',0,'en cours',NULL,22),(13,'2022-04-22',0,'en cours',NULL,21)
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `categorie_intervention` (\000d\000a  `id` int NOT NULL,\000d\000a  `type` varchar(45) DEFAULT NULL,\000d\000a  `prix` float DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `categorie_intervention` (\000d\000a  `id` int NOT NULL,\000d\000a  `type` varchar(45) DEFAULT NULL,\000d\000a  `prix` float DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `categorie_intervention` (
+  `id` int NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `prix` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORIE_INTERVENTION" not found (this database is empty); SQL statement:
+INSERT INTO `categorie_intervention` VALUES (1,'traitements dâ€™urgence',300),(2,'dentisterie esthÃ©tique',750),(3,'extraction de dents',450),(4,'enlÃ¨vement de dents de sagesse',520),(5,'implants dentaires',350)
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `couverture_medicale` (\000d\000a  `id` int NOT NULL,\000d\000a  `type` varchar(45) DEFAULT NULL,\000d\000a  `id_patient` int DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  [*]KEY `ghh_idx` (`id_patient`),\000d\000a  CONSTRAINT `ghh` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `couverture_medicale` (\000d\000a  `id` int NOT NULL,\000d\000a  `type` varchar(45) DEFAULT NULL,\000d\000a  `id_patient` int DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  [*]KEY `ghh_idx` (`id_patient`),\000d\000a  CONSTRAINT `ghh` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `couverture_medicale` (
+  `id` int NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `id_patient` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ghh_idx` (`id_patient`),
+  CONSTRAINT `ghh` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `type_radio` (\000d\000a  `id` int NOT NULL,\000d\000a  `description` varchar(60) DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `type_radio` (\000d\000a  `id` int NOT NULL,\000d\000a  `description` varchar(60) DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `type_radio` (
+  `id` int NOT NULL,
+  `description` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TYPE_RADIO" not found (this database is empty); SQL statement:
+INSERT INTO `type_radio` VALUES (1,'rÃ©tro-coronaire (Bite-wing),'),(2,'pÃ©riapicale'),(3,'occlusale'),(4,'panoramique'),(5,'cÃ©phalomÃ©trique'),(6,'Ã  faisceau conique')
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `radio` (\000d\000a  `id` int NOT NULL,\000d\000a  `date` date DEFAULT NULL,\000d\000a  `chemin_image` varchar(120) DEFAULT NULL,\000d\000a  `id_type` int DEFAULT NULL,\000d\000a  `id_acte` int DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  [*]KEY `gt_idx` (`id_type`),\000d\000a  KEY `gr_idx` (`id_acte`),\000d\000a  CONSTRAINT `gr` FOREIGN KEY (`id_acte`) REFERENCES `acte_medical` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,\000d\000a  CONSTRAINT `gt` FOREIGN KEY (`id_type`) REFERENCES `type_radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `radio` (\000d\000a  `id` int NOT NULL,\000d\000a  `date` date DEFAULT NULL,\000d\000a  `chemin_image` varchar(120) DEFAULT NULL,\000d\000a  `id_type` int DEFAULT NULL,\000d\000a  `id_acte` int DEFAULT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  [*]KEY `gt_idx` (`id_type`),\000d\000a  KEY `gr_idx` (`id_acte`),\000d\000a  CONSTRAINT `gr` FOREIGN KEY (`id_acte`) REFERENCES `acte_medical` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,\000d\000a  CONSTRAINT `gt` FOREIGN KEY (`id_type`) REFERENCES `type_radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `radio` (
+  `id` int NOT NULL,
+  `date` date DEFAULT NULL,
+  `chemin_image` varchar(120) DEFAULT NULL,
+  `id_type` int DEFAULT NULL,
+  `id_acte` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `gt_idx` (`id_type`),
+  KEY `gr_idx` (`id_acte`),
+  CONSTRAINT `gr` FOREIGN KEY (`id_acte`) REFERENCES `acte_medical` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `gt` FOREIGN KEY (`id_type`) REFERENCES `type_radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RADIO" not found (this database is empty); SQL statement:
+INSERT INTO `radio` VALUES (8,'2022-04-07','dental-xray-2-825x550.jpg',3,5),(9,'2022-04-13','The-Science-of-Modern-Dental-X-Rays.jpg',3,5),(10,'2022-03-29','22.jpg',4,5),(11,'2022-03-29','dental-xray-2-825x550.jpg',5,5),(12,'2022-04-08','images.jpg',2,5),(13,'2022-04-07','images (1).jpg',3,5),(14,'2022-04-13','22.jpg',2,8),(15,'2022-04-13','images.jpg',4,8),(16,'2022-05-10','The-Science-of-Modern-Dental-X-Rays.jpg',3,6)
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `rem_generale` (\000d\000a  `remarque` varchar(60) NOT NULL,\000d\000a  `id_radio` int DEFAULT NULL,\000d\000a  [*]KEY `ss_idx` (`id_radio`),\000d\000a  CONSTRAINT `ss` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `rem_generale` (\000d\000a  `remarque` varchar(60) NOT NULL,\000d\000a  `id_radio` int DEFAULT NULL,\000d\000a  [*]KEY `ss_idx` (`id_radio`),\000d\000a  CONSTRAINT `ss` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `rem_generale` (
+  `remarque` varchar(60) NOT NULL,
+  `id_radio` int DEFAULT NULL,
+  KEY `ss_idx` (`id_radio`),
+  CONSTRAINT `ss` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REM_GENERALE" not found (this database is empty); SQL statement:
+INSERT INTO `rem_generale` VALUES ('progrÃ©s normal dent5',10),('progrÃ©s normal',16)
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `rem_negative` (\000d\000a  `remarque` varchar(60) NOT NULL,\000d\000a  `id_radio` int DEFAULT NULL,\000d\000a  [*]KEY `qz_idx` (`id_radio`),\000d\000a  CONSTRAINT `qz` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `rem_negative` (\000d\000a  `remarque` varchar(60) NOT NULL,\000d\000a  `id_radio` int DEFAULT NULL,\000d\000a  [*]KEY `qz_idx` (`id_radio`),\000d\000a  CONSTRAINT `qz` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `rem_negative` (
+  `remarque` varchar(60) NOT NULL,
+  `id_radio` int DEFAULT NULL,
+  KEY `qz_idx` (`id_radio`),
+  CONSTRAINT `qz` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REM_NEGATIVE" not found (this database is empty); SQL statement:
+INSERT INTO `rem_negative` VALUES ('le dents numÃ©ro 9 commence Ã  etre affctÃ© ',8),('dÃ©gradation du dent numÃ©ro 6',10),('pas de progrÃ¨s constatÃ© au niveau dent 8',10),('pas de progrÃ¨s constatÃ© au niveau dent 9',10),('dÃ©calage anormal dent numero 6\n',15),('anomalie constatÃ©e dent 8',16)
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `rem_positive` (\000d\000a  `remarque` varchar(45) NOT NULL,\000d\000a  `id_radio` int DEFAULT NULL,\000d\000a  [*]KEY `bb_idx` (`id_radio`),\000d\000a  CONSTRAINT `bb` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `rem_positive` (\000d\000a  `remarque` varchar(45) NOT NULL,\000d\000a  `id_radio` int DEFAULT NULL,\000d\000a  [*]KEY `bb_idx` (`id_radio`),\000d\000a  CONSTRAINT `bb` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `rem_positive` (
+  `remarque` varchar(45) NOT NULL,
+  `id_radio` int DEFAULT NULL,
+  KEY `bb_idx` (`id_radio`),
+  CONSTRAINT `bb` FOREIGN KEY (`id_radio`) REFERENCES `radio` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "REM_POSITIVE" not found (this database is empty); SQL statement:
+INSERT INTO `rem_positive` VALUES ('progrÃ©s remarquÃ© par rapport Ã  la prÃ©cedente',8),('progrÃ¨s constatÃ© niveau dent 7',10),('progrÃ©s positif remarquÃ© le 10-04-2022',14),('progres remarque dent8',15)
+ [42104-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `assistant` (\000d\000a  `login` varchar(45) NOT NULL,\000d\000a  `password` varchar(45) DEFAULT NULL,\000d\000a  PRIMARY KEY (`login`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `assistant` (\000d\000a  `login` varchar(45) NOT NULL,\000d\000a  `password` varchar(45) DEFAULT NULL,\000d\000a  PRIMARY KEY (`login`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `assistant` (
+  `login` varchar(45) NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:49:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE `dentiste` (\000d\000a  `login` varchar(45) NOT NULL,\000d\000a  `password` varchar(45) DEFAULT NULL,\000d\000a  PRIMARY KEY (`login`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE `dentiste` (\000d\000a  `login` varchar(45) NOT NULL,\000d\000a  `password` varchar(45) DEFAULT NULL,\000d\000a  PRIMARY KEY (`login`)\000d\000a) ENGINE[*]=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\000d\000a"; expected "identifier"; SQL statement:
+CREATE TABLE `dentiste` (
+  `login` varchar(45) NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+ [42001-212]
+2022-05-04 17:53:21 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at application.database.getConnection(database.java:35)
+	at application.Main.start(Main.java:35)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 28 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 22 more
+2022-05-04 17:54:03 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at application.database.getConnection(database.java:35)
+	at application.Main.start(Main.java:35)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 28 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 22 more
+2022-05-04 17:55:25 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at application.database.getConnection(database.java:35)
+	at application.Main.start(Main.java:35)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 28 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/said lahbibi/eclipse-workspace/Dental_management/allam2.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 22 more
