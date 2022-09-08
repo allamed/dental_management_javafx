@@ -1,6 +1,6 @@
 # dental_management_javafx
 This is an app for dental management developed with java / javafx 
-- Suits Francophone users 
+- Suits Francophone users  : application de gestion d'un cabinet dentaire
 # How to run the app
 - open the command prompt 
 - run cd to the folder Dental management 
