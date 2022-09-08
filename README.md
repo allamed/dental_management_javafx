@@ -1,4 +1,4 @@
-# dental_management_javafx
+# Application de gestion d'un cabinet dentaire avec javafx
 This is an app for dental management developed with java / javafx 
 - Suits Francophone users  : application de gestion d'un cabinet dentaire
 # How to run the app
