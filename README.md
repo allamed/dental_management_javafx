@@ -4,10 +4,9 @@ This is an app for dental management developed with java / javafx
 # How to run the app
 - open the command prompt 
 - run cd to the folder Dental management 
-- In the following command :
-java --module-path "**************\javafx\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml -jar dental_EMI_Project.jar
-- replace the stars by the path of the folder Dental_managemnet 
-- run the command after modification 
+- run the following command :
+java --module-path ".\javafx\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml -jar dental_EMI_Project.jar
+
 - to log in as a dentist : 
       - username : allam 
       - password : 123
@@ -15,11 +14,4 @@ java --module-path "**************\javafx\javafx-sdk-17.0.1\lib" --add-modules j
       - username : aouad
       - password : 123
 # ScreenShots
-![picture 1](/screenshots/Picture2.png? )
-![picture 1](/screenshots/Picture1.png? )
-![picture 2](/screenshots/Picture15.png? )
-![picture 1](/screenshots/5454.png? )
-![picture 1](/screenshots/545.png? )
-
-
-
+![Video_2023_03_26-4_edit_2](https://user-images.githubusercontent.com/93490149/227810534-1663df37-441d-4615-bc5a-7c802ce82fca.gif)
